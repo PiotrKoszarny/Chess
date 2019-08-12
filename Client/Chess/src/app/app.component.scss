@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.chess{
+    padding: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 960px;
+    div{
+        display: inline-block;
+    }
+    .board{
+        width: $square *8;
+        height: $square *8;   
+        border: 1px solid black;
+    }
+    .mat-radio-button{
+        display: block
+    }
+    .counter{
+        width: $square;
+    }
+    .counters{
+        margin: 10px;
+        position: fixed;
+    }  
+
+    .chess-field{
+        padding: 0;
+        margin: 0;
+        height: $square;
+        width: $square;
+    }
+}
+#counter{
+    width: $square;
+    position: absolute;
+    text-align: center;
+}
+
+#counter-icon{    
+    font-size: $square  - 1vw;
+}

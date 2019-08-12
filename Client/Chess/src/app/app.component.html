@@ -1,0 +1,21 @@
+<section class="chess">
+    <div class="board">
+      <div *ngFor="let row of boardSquere">
+        <div *ngFor="let column of boardSquere;let columnIndex = index" style="display: flex">
+          <app-chess-field [isWhiteColor]="(row+columnIndex)%2" [column]="column" [row]="row"
+            (counterPosition)="chageCounterPosition($event)"></app-chess-field>
+        </div>
+  
+      </div>
+    </div>
+    <div class="counters">
+      <mat-radio-group (change)=changecounters($event) class="counters">
+        <mat-radio-button *ngFor="let counter of counters" class="example-radio-button" [value]="counter.counter">
+          <img class="counter" src="../assets/{{counter.imgName}}">
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div *ngIf="counter?.isSelected" id="counter" [style.top.px]="topPx" [style.left.px]="leftPx" class="counter">
+      <img class="counter" src="../assets/{{counter.imgName}}">
+    </div>
+</section>
