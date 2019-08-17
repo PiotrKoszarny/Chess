@@ -13,6 +13,29 @@ namespace Chess.BLL
             return piece.IsValidMovement(move.Move);
         }
 
+        public IEnumerable<FieldPosition> GetAvailableMoves(MoveVM move, int boardSize)
+        {
+            var available = new List<FieldPosition>();
+
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    move.Move.EndX = i;
+                    move.Move.EndY = j;
+                    if (IsvalidMove(move))
+                    {
+                        available.Add(new FieldPosition
+                        {
+                            PositionX = move.Move.EndX,
+                            PositionY = move.Move.EndY
+                        });
+                    }
+                }
+            }
+            return available;
+        }
+
         public IEnumerable<CounterVM> GetCounters()
         {
             var counters = new List<CounterVM>();

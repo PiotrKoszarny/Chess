@@ -25,6 +25,22 @@ namespace Chess.Controllers
             return Ok(_counterService.GetCounters());
         }
 
+        [HttpGet]
+        [Route("{counter}/{startX}/{startY}/{boardSize}")]
+        public ActionResult<IEnumerable<FieldPosition>> GetAvailableMoves(int counter, int startX, int startY, int boardSize)
+        {
+            var move = new MoveVM
+            {
+                Counter = (Counter)counter,
+                Move = new Movement
+                {
+                    StartX = startX,
+                    StartY = startY
+                }
+            };
+            return Ok(_counterService.GetAvailableMoves(move, boardSize));
+        }
+
         [HttpPost]
         public ActionResult<bool> IsPossibleMove(MoveVM move)
         {

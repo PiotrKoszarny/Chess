@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Chess.Models
 {
-    public class Movement
+    public class FieldPosition
     {
-        public int StartX, StartY;
-        public int EndX, EndY;
+        public int PositionX { get; set; }
+        public int PositionY { get; set; }
     }
 }

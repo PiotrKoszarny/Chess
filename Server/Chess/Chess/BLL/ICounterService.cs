@@ -7,5 +7,6 @@ namespace Chess.BLL
     {
         bool IsvalidMove(MoveVM move);
         IEnumerable<CounterVM> GetCounters();
+        IEnumerable<FieldPosition> GetAvailableMoves(MoveVM move, int boardSize);
     }
 }

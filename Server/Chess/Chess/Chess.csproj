@@ -7,18 +7,18 @@
 
   <ItemGroup>
     <Compile Remove="DAL\**" />
+    <Compile Remove="Models\Counters\img\**" />
     <Content Remove="DAL\**" />
+    <Content Remove="Models\Counters\img\**" />
     <EmbeddedResource Remove="DAL\**" />
+    <EmbeddedResource Remove="Models\Counters\img\**" />
     <None Remove="DAL\**" />
+    <None Remove="Models\Counters\img\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Counters\img\" />
   </ItemGroup>
 
 </Project>
